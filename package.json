@@ -1,0 +1,47 @@
+{
+    "name": "@adper/wordsmith",
+    "version": "1.0.1",
+    "description": "Zero-config contextual password wordlist generator CLI powered by local ONNX zero-shot NER (GLiNER) and probability-ranked mutations",
+    "type": "module",
+    "bin": {
+        "wordsmith": "dist/cli.js"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": [
+        "wordlist",
+        "pentest",
+        "osint",
+        "security",
+        "cli",
+        "gliner",
+        "onnx",
+        "password-auditing"
+    ],
+    "author": "Anay Pandya",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc",
+        "test": "node --test dist/test/*.test.js",
+        "prepublishOnly": "npm run build && npm test"
+    },
+    "dependencies": {
+        "@lmoe/gliner-onnx": "^0.2.0",
+        "chrono-node": "^2.10.3"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "typescript": "^5.8.0"
+    }
+}
